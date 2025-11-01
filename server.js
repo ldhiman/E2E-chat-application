@@ -14,7 +14,10 @@ const port = process.env.PORT || 3000;
 // ✅ Enable CORS
 app.use(
   cors({
-    origin: "http://localhost:3001", // frontend origin
+     origin: [
+      "http://localhost:3001",         // local development
+      "https://e2e-chat-frontend.vercel.app" // deployed frontend
+    ],
     credentials: true, // if you plan to send cookies or auth headers
   })
 );
